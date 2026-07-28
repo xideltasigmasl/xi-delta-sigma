@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#24609F" />
+  <title>Xi Delta Sigma | Pledge Application</title>
+  <style>
+    :root {
+      --indian-red: #D7575A;
+      --yale-blue: #24609F;
+      --olivine: #9CB283;
+      --flame: #DB6D2E;
+      --ink: #152033;
+      --cream: #FBF8F3;
+      --white: #FFFFFF;
+      --muted: #687386;
+      --border: rgba(21, 32, 51, 0.12);
+      --shadow: 0 22px 60px rgba(27, 49, 78, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(215, 87, 90, 0.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(36, 96, 159, 0.17), transparent 30%),
+        var(--cream);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      background: var(--ink);
+      color: white;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    .topbar span { color: var(--olivine); }
+
+    .hero {
+      min-height: 78vh;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 72px 22px 84px;
+      background:
+        linear-gradient(125deg, rgba(21,32,51,.94), rgba(36,96,159,.88)),
+        repeating-linear-gradient(115deg, transparent 0 24px, rgba(255,255,255,.06) 24px 34px, transparent 34px 58px);
+      color: white;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: .55;
+    }
+
+    .hero::before {
+      width: 420px;
+      height: 420px;
+      left: -120px;
+      top: -140px;
+      background: rgba(215,87,90,.45);
+    }
+
+    .hero::after {
+      width: 360px;
+      height: 360px;
+      right: -100px;
+      bottom: -160px;
+      background: rgba(219,109,46,.45);
+    }
+
+    .hero-inner {
+      width: min(1120px, 100%);
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.2rem, 9vw, 7.4rem);
+      line-height: .9;
+      margin: 24px 0 22px;
+      letter-spacing: -.055em;
+    }
+
+    h1 span { color: var(--olivine); display: block; }
+
+    .hero-copy {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      max-width: 700px;
+      color: rgba(255,255,255,.86);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 900;
+      border: 0;
+      cursor: pointer;
+      transition: .2s ease;
+      font-size: 1rem;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--indian-red); color: white; box-shadow: 0 12px 30px rgba(215,87,90,.3); }
+    .btn-secondary { background: rgba(255,255,255,.1); color: white; border: 1px solid rgba(255,255,255,.25); }
+
+    .crest-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 80px rgba(0,0,0,.2);
+    }
+
+    .crest-mark {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 4px solid white;
+      background:
+        repeating-linear-gradient(105deg, #111 0 13px, #fff 13px 27px);
+      box-shadow: inset 0 0 0 8px var(--flame), 0 16px 50px rgba(0,0,0,.28);
+    }
+
+    .crest-mark strong {
+      width: 102px;
+      height: 102px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--yale-blue);
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      letter-spacing: .02em;
+      text-align: center;
+      line-height: 1;
+      border: 3px solid var(--olivine);
+    }
+
+    .crest-card h2 { text-align: center; margin: 0; font-size: 1.35rem; }
+    .crest-card p { text-align: center; color: rgba(255,255,255,.78); margin: 8px 0 0; }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .mini-grid div {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      margin-top: -48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .panel {
+      background: white;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 30px;
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      font-family: Georgia, serif;
+      font-size: 2rem;
+    }
+
+    .value-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .value-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .value-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--indian-red), var(--flame));
+    }
+
+    .value-item strong { display: block; margin-bottom: 2px; }
+    .value-item span { color: var(--muted); font-size: .95rem; }
+
+    .notice {
+      background: linear-gradient(135deg, rgba(156,178,131,.2), rgba(36,96,159,.08));
+      border-left: 5px solid var(--olivine);
+    }
+
+    .notice ul { padding-left: 20px; color: var(--muted); }
+
+    .application-section { padding: 70px 0 84px; }
+
+    .section-heading { text-align: center; margin-bottom: 30px; }
+    .section-heading h2 { font-family: Georgia, serif; font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0; }
+    .section-heading p { color: var(--muted); max-width: 680px; margin: 12px auto 0; }
+
+    form {
+      background: white;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .form-progress { height: 8px; background: #edf0f4; }
+    .form-progress span { display: block; width: 20%; height: 100%; background: linear-gradient(90deg, var(--indian-red), var(--flame)); transition: width .25s ease; }
+
+    .form-body { padding: 34px; }
+
+    .step { display: none; animation: fade .25s ease; }
+    .step.active { display: block; }
+
+    @keyframes fade { from { opacity: .25; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    .step-label { color: var(--yale-blue); font-size: .78rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 900; }
+    .step h3 { font-family: Georgia, serif; font-size: 2rem; margin: 5px 0 8px; }
+    .step > p { color: var(--muted); margin-top: 0; }
+
+    .fields { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 24px; }
+    .field.full { grid-column: 1 / -1; }
+
+    label { display: block; font-size: .9rem; font-weight: 800; margin-bottom: 7px; }
+    .required::after { content: " *"; color: var(--indian-red); }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #cfd6df;
+      border-radius: 13px;
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+      transition: .2s ease;
+    }
+
+    textarea { min-height: 122px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: var(--yale-blue); box-shadow: 0 0 0 4px rgba(36,96,159,.1); }
+
+    .choices { display: grid; gap: 10px; }
+    .choice {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      border: 1px solid #d9dee5;
+      border-radius: 13px;
+      padding: 13px;
+      cursor: pointer;
+    }
+    .choice input { width: auto; margin-top: 4px; }
+
+    .agreement {
+      border-radius: 16px;
+      padding: 18px;
+      background: #f7f9fb;
+      border: 1px solid #e1e6ec;
+      margin-top: 18px;
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 22px 34px 30px;
+      border-top: 1px solid var(--border);
+      background: #fbfcfd;
+    }
+
+    .btn-back { background: #e9edf2; color: var(--ink); }
+    .btn-next { background: var(--yale-blue); color: white; }
+    .btn-submit { background: linear-gradient(135deg, var(--indian-red), var(--flame)); color: white; }
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 48px 28px;
+    }
+
+    .success.active { display: block; }
+    .success-icon {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--olivine);
+      color: white;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.78);
+      padding: 34px 20px;
+      text-align: center;
+    }
+
+    footer strong { color: white; }
+
+    @media (max-width: 850px) {
+      .hero-inner, .intro-grid { grid-template-columns: 1fr; }
+      .crest-card { max-width: 520px; }
+      .intro-grid { margin-top: -30px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 56px; }
+      .fields { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .form-body, .form-footer { padding-left: 20px; padding-right: 20px; }
+      .form-footer { flex-direction: column-reverse; }
+      .form-footer .btn { width: 100%; }
+      .panel { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Xi Delta Sigma Sorority • <span>Confidence. Class. Sisterhood.</span></div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="kicker">ΞΔΣ • Pledge Interest Application</div>
+        <h1>Can you handle <span>the jungle?</span></h1>
+        <p class="hero-copy">
+          Xi Delta Sigma is seeking women who are ready to show up, build real bonds, protect the sisterhood, and contribute with confidence and class.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#apply">Begin Application</a>
+          <a class="btn btn-secondary" href="#expectations">View Expectations</a>
+        </div>
+      </div>
+
+      <aside class="crest-card" aria-label="Xi Delta Sigma identity">
+        <div class="crest-mark"><strong>ΞΔΣ</strong></div>
+        <h2>Xi Delta Sigma</h2>
+        <p>“With confidence and class we have built a sisterhood that last.”</p>
+        <div class="mini-grid">
+          <div>🦓 Mascot: Zebra</div>
+          <div>🌺 Flower: Hibiscus</div>
+          <div>💎 Imperial Topaz</div>
+          <div>🤝 Charity: NORD</div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-grid" id="expectations">
+      <article class="panel">
+        <h2>Who we are looking for</h2>
+        <p>We are not looking for names on a roster. We are looking for women who are emotionally mature, present, dependable, and ready to contribute.</p>
+        <div class="value-list">
+          <div class="value-item"><div class="value-icon">01</div><div><strong>Consistency</strong><span>You communicate, attend, follow through, and do not disappear without explanation.</span></div></div>
+          <div class="value-item"><div class="value-icon">02</div><div><strong>Sisterhood</strong><span>You value connection, accountability, respect, and peaceful conflict resolution.</span></div></div>
+          <div class="value-item"><div class="value-icon">03</div><div><strong>Contribution</strong><span>You bring ideas, energy, talent, service, and a willingness to help the organization grow.</span></div></div>
+          <div class="value-item"><div class="value-icon">04</div><div><strong>Commitment</strong><span>You understand that membership requires time, communication, participation, and responsibility.</span></div></div>
+        </div>
+      </article>
+
+      <article class="panel notice">
+        <h2>Before you apply</h2>
+        <p>This application is designed to help leadership understand your character, availability, and readiness for the pledge process.</p>
+        <ul>
+          <li>Answer every question honestly and completely.</li>
+          <li>Applicants must be willing to communicate through the required group platforms.</li>
+          <li>Attendance, participation, and respectful conduct will be evaluated.</li>
+          <li>Submitting an application does not guarantee acceptance.</li>
+          <li>Leadership may contact you for an interview or additional information.</li>
+        </ul>
+        <p><strong>Our call:</strong> ahhhhh wooootttt 🦓</p>
+      </article>
+    </section>
+
+    <section class="application-section" id="apply">
+      <div class="section-heading">
+        <h2>Pledge Application</h2>
+        <p>Complete all five sections. Your answers should reflect who you truly are and what you are prepared to bring to Xi Delta Sigma.</p>
+      </div>
+
+      <form id="pledgeForm" novalidate>
+        <div class="form-progress"><span id="progressBar"></span></div>
+        <div id="formShell">
+          <div class="form-body">
+            <section class="step active" data-step="1">
+              <div class="step-label">Step 1 of 5</div>
+              <h3>Tell us who you are</h3>
+              <p>Start with your Second Life identity and basic contact details.</p>
+              <div class="fields">
+                <div class="field"><label class="required" for="slName">Second Life legacy name</label><input id="slName" name="slName" required /></div>
+                <div class="field"><label class="required" for="displayName">Second Life display name</label><input id="displayName" name="displayName" required /></div>
+                <div class="field"><label class="required" for="age">Are you 21 or older?</label><select id="age" name="age" required><option value="">Select one</option><option>Yes</option><option>No</option></select></div>
+                <div class="field"><label class="required" for="timezone">Time zone</label><input id="timezone" name="timezone" placeholder="Example: SLT / PST / EST" required /></div>
+                <div class="field"><label class="required" for="discord">Discord username</label><input id="discord" name="discord" required /></div>
+                <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" /></div>
+                <div class="field"><label for="facebook">Facebook name or profile</label><input id="facebook" name="facebook" /></div>
+                <div class="field"><label for="instagram">Instagram username</label><input id="instagram" name="instagram" /></div>
+                <div class="field full"><label class="required" for="referral">How did you hear about Xi Delta Sigma?</label><input id="referral" name="referral" required /></div>
+              </div>
+            </section>
+
+            <section class="step" data-step="2">
+              <div class="step-label">Step 2 of 5</div>
+              <h3>Your availability</h3>
+              <p>Commitment begins with being realistic about your schedule.</p>
+              <div class="fields">
+                <div class="field"><label class="required" for="weeklyHours">Hours available weekly</label><select id="weeklyHours" name="weeklyHours" required><option value="">Select one</option><option>1–2 hours</option><option>3–5 hours</option><option>6+ hours</option></select></div>
+                <div class="field"><label class="required" for="weekends">Weekend availability</label><select id="weekends" name="weekends" required><option value="">Select one</option><option>Usually available</option><option>Sometimes available</option><option>Rarely available</option></select></div>
+                <div class="field full"><label class="required" for="schedule">Describe your normal Second Life schedule and the best days/times to reach you.</label><textarea id="schedule" name="schedule" required></textarea></div>
+                <div class="field full"><label class="required" for="conflicts">List any work, family, organizational, or roleplay commitments that could affect your participation.</label><textarea id="conflicts" name="conflicts" required></textarea></div>
+                <div class="field full"><label class="required" for="attendance">Can you commit to attending required meetings, bonding activities, and pledge events with advance notice?</label><select id="attendance" name="attendance" required><option value="">Select one</option><option>Yes</option><option>No</option><option>I need to discuss my schedule</option></select></div>
+              </div>
+            </section>
+
+            <section class="step" data-step="3">
+              <div class="step-label">Step 3 of 5</div>
+              <h3>Your character</h3>
+              <p>We care about how you communicate, lead, and handle difficult moments.</p>
+              <div class="fields">
+                <div class="field full"><label class="required" for="whyJoin">Why do you want to become a member of Xi Delta Sigma?</label><textarea id="whyJoin" name="whyJoin" minlength="80" required></textarea></div>
+                <div class="field full"><label class="required" for="sisterhood">What does genuine sisterhood mean to you?</label><textarea id="sisterhood" name="sisterhood" minlength="60" required></textarea></div>
+                <div class="field full"><label class="required" for="conflict">Describe a time you had a disagreement in a group. How did you handle it?</label><textarea id="conflict" name="conflict" minlength="60" required></textarea></div>
+                <div class="field full"><label class="required" for="accountability">How do you respond when someone respectfully holds you accountable?</label><textarea id="accountability" name="accountability" minlength="40" required></textarea></div>
+              </div>
+            </section>
+
+            <section class="step" data-step="4">
+              <div class="step-label">Step 4 of 5</div>
+              <h3>Your contribution</h3>
+              <p>Every member should add something meaningful to the sisterhood.</p>
+              <div class="fields">
+                <div class="field full"><label class="required" for="skills">What talents, skills, resources, or experience would you bring to Xi Delta Sigma?</label><textarea id="skills" name="skills" required></textarea></div>
+                <div class="field full"><label class="required" for="service">NORD supports people affected by rare diseases. Why is community service important to you?</label><textarea id="service" name="service" minlength="50" required></textarea></div>
+                <div class="field full"><label class="required">Which areas interest you most?</label>
+                  <div class="choices">
+                    <label class="choice"><input type="checkbox" name="interests" value="Events" /> Event planning and hosting</label>
+                    <label class="choice"><input type="checkbox" name="interests" value="Promotions" /> Promotions, photography, video, or social media</label>
+                    <label class="choice"><input type="checkbox" name="interests" value="Service" /> Community service and charity work</label>
+                    <label class="choice"><input type="checkbox" name="interests" value="Mentorship" /> Mentorship, bonding, and member support</label>
+                    <label class="choice"><input type="checkbox" name="interests" value="Administration" /> Administration, organization, and leadership</label>
+                  </div>
+                </div>
+                <div class="field full"><label class="required" for="legacy">What do you hope people will say about your contribution one year after you join?</label><textarea id="legacy" name="legacy" required></textarea></div>
+              </div>
+            </section>
+
+            <section class="step" data-step="5">
+              <div class="step-label">Step 5 of 5</div>
+              <h3>Commitment and acknowledgment</h3>
+              <p>Read each statement carefully before submitting.</p>
+              <div class="agreement">
+                <div class="choices">
+                  <label class="choice"><input type="checkbox" id="honesty" required /> I confirm that the information in this application is honest and complete.</label>
+                  <label class="choice"><input type="checkbox" id="communication" required /> I understand that consistent communication and timely responses are expected.</label>
+                  <label class="choice"><input type="checkbox" id="conduct" required /> I agree to treat members, pledges, guests, and other organizations with respect.</label>
+                  <label class="choice"><input type="checkbox" id="participation" required /> I understand that repeated absence, poor communication, or disruptive conduct may affect my eligibility.</label>
+                  <label class="choice"><input type="checkbox" id="decision" required /> I understand that leadership makes final membership decisions and that submitting this form does not guarantee acceptance.</label>
+                </div>
+              </div>
+              <div class="fields">
+                <div class="field full"><label class="required" for="finalNote">Is there anything else leadership should know before reviewing your application?</label><textarea id="finalNote" name="finalNote" required></textarea></div>
+                <div class="field"><label class="required" for="signature">Type your Second Life name as your signature</label><input id="signature" name="signature" required /></div>
+                <div class="field"><label class="required" for="date">Date</label><input id="date" name="date" type="date" required /></div>
+              </div>
+            </section>
+          </div>
+
+          <div class="form-footer">
+            <button class="btn btn-back" type="button" id="backBtn" style="visibility:hidden">Back</button>
+            <button class="btn btn-next" type="button" id="nextBtn">Continue</button>
+            <button class="btn btn-submit" type="submit" id="submitBtn" style="display:none">Submit Application</button>
+          </div>
+        </div>
+
+        <div class="success" id="successMessage">
+          <div class="success-icon">✓</div>
+          <h2>Application prepared</h2>
+          <p>Your application has been validated. A copy has been downloaded to your device for submission to Xi Delta Sigma leadership.</p>
+          <p><strong>ahhhhh wooootttt 🦓</strong></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Xi Delta Sigma Sorority • Established 11-2024</strong><br />
+    With confidence and class, we continue building a sisterhood that lasts.
+  </footer>
+
+  <script>
+    const form = document.getElementById('pledgeForm');
+    const steps = [...document.querySelectorAll('.step')];
+    const progressBar = document.getElementById('progressBar');
+    const nextBtn = document.getElementById('nextBtn');
+    const backBtn = document.getElementById('backBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const formShell = document.getElementById('formShell');
+    const successMessage = document.getElementById('successMessage');
+    let currentStep = 0;
+
+    document.getElementById('date').valueAsDate = new Date();
+
+    function showStep(index) {
+      steps.forEach((step, i) => step.classList.toggle('active', i === index));
+      progressBar.style.width = `${((index + 1) / steps.length) * 100}%`;
+      backBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
+      nextBtn.style.display = index === steps.length - 1 ? 'none' : 'inline-flex';
+      submitBtn.style.display = index === steps.length - 1 ? 'inline-flex' : 'none';
+      window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
+    }
+
+    function validateStep(index) {
+      const fields = [...steps[index].querySelectorAll('input, select, textarea')];
+      for (const field of fields) {
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          return false;
+        }
+      }
+      if (index === 3 && !form.querySelector('input[name="interests"]:checked')) {
+        alert('Please select at least one area of interest.');
+        return false;
+      }
+      return true;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (!validateStep(currentStep)) return;
+      currentStep++;
+      showStep(currentStep);
+    });
+
+    backBtn.addEventListener('click', () => {
+      currentStep--;
+      showStep(currentStep);
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!validateStep(currentStep)) return;
+
+      const data = new FormData(form);
+      const lines = [
+        'XI DELTA SIGMA PLEDGE APPLICATION',
+        '=================================',
+        ''
+      ];
+
+      const labels = {
+        slName: 'Second Life Legacy Name', displayName: 'Display Name', age: '21 or Older', timezone: 'Time Zone',
+        discord: 'Discord', email: 'Email', facebook: 'Facebook', instagram: 'Instagram', referral: 'Referral Source',
+        weeklyHours: 'Weekly Availability', weekends: 'Weekend Availability', schedule: 'Normal Schedule',
+        conflicts: 'Other Commitments', attendance: 'Required Event Commitment', whyJoin: 'Why Xi Delta Sigma',
+        sisterhood: 'Meaning of Sisterhood', conflict: 'Conflict Example', accountability: 'Response to Accountability',
+        skills: 'Skills and Talents', service: 'Community Service / NORD', interests: 'Areas of Interest',
+        legacy: 'One-Year Contribution', finalNote: 'Additional Information', signature: 'Signature', date: 'Date'
+      };
+
+      const interests = data.getAll('interests');
+      for (const [key, label] of Object.entries(labels)) {
+        let value = key === 'interests' ? interests.join(', ') : data.get(key);
+        if (!value) value = 'Not provided';
+        lines.push(`${label}:`);
+        lines.push(String(value));
+        lines.push('');
+      }
+
+      const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      const safeName = (data.get('slName') || 'applicant').replace(/[^a-z0-9]/gi, '_').toLowerCase();
+      anchor.href = url;
+      anchor.download = `xi_delta_sigma_application_${safeName}.txt`;
+      anchor.click();
+      URL.revokeObjectURL(url);
+
+      formShell.style.display = 'none';
+      successMessage.classList.add('active');
+      progressBar.style.width = '100%';
+    });
+  </script>
+</body>
+</html>
